@@ -4,6 +4,7 @@ import { Button } from "@material-ui/core";
 import { TextField } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
+
 import { useLoginEntry as useStyles } from "../styles/Login";
 
 function LoginEntry() {
@@ -28,13 +29,13 @@ function LoginEntry() {
       })
     }).then((data) => {
       if (data.code === 1) {
-        setErrorMessage("Success");
+        navigate("/food");
       } else {
-        setErrorMessage("Fail");
+        setErrorMessage("Incorrect username or password");
       }
     }).catch((error) => {
       console.log(error);
-      setErrorMessage("Server Error");
+      setErrorMessage("Server error");
     });
   }
 

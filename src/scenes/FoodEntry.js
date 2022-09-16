@@ -1,24 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
 import { Avatar, Paper, Table, TableBody, TableCell, TableHead, TableRow, TableContainer } from "@material-ui/core";
 
 import { useFoodEntry as useStyles } from "../styles/Food";
-import { db } from "../core/firebase";
 
 function FoodEntry() {
   const [food, setFood] = useState([]);
   const styles = useStyles();
 
-  const foodRef = collection(db, "food");
+  const foods = [
+    {
+      id: 1,
+      title: "Apple",
+      desc: "This is an apple",
+      img: "https://gic-hackathon.s3.ap-southeast-1.amazonaws.com/apple.jpeg"
+    },
+    {
+      id: 2,
+      title: "Orange",
+      desc: "This is an orange",
+      img: "https://gic-hackathon.s3.ap-southeast-1.amazonaws.com/orange.jpeg"
+    },
+  ];
 
   useEffect(() => {
-    getDocs(foodRef).then((data) => {
-      const food = data.docs.map((doc) => ({...doc.data()}));
-      setFood(food);
-    }).catch((err) => {
-      console.log(err);
-    });
-  }, [foodRef]);
+    setFood(foods);
+  }, []);
 
   return (
     <div className={styles.container}>
