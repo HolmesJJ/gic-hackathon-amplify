@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { Button } from "@material-ui/core";
-// import { TextField } from "@mui/material";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
+import { Button } from "@material-ui/core";
+import { TextField } from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 
 import { useLoginEntry as useStyles } from "../styles/Login";
 
@@ -41,7 +41,7 @@ function LoginEntry() {
 
   return (
     <div className={styles.container}>
-      {/* <div>
+      <div>
         <p className={styles.title}>Login</p>
       </div>
       <div className={styles.row}>
@@ -80,7 +80,7 @@ function LoginEntry() {
       </Button>
       <div>
         <p className={styles.error}>{errorMessage}</p>
-      </div> */}
+      </div>
     </div>
   );
 }
