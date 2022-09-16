@@ -8,7 +8,7 @@ import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import { useLoginEntry as useStyles } from "../styles/Login";
 
 function LoginEntry() {
-  const LOGIN_URL = "https://3e6ew7430f.execute-api.ap-southeast-1.amazonaws.com/login"
+  const LOGIN_URL = "http://gic-env.eba-pi4mfuxe.ap-southeast-1.elasticbeanstalk.com/login"
   const navigate = useNavigate();
   const styles = useStyles();
 
