@@ -16,19 +16,24 @@ function LoginEntry() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  function login() {
-    fetch(LOGIN_URL, {
+  async function postData() {
+    const response = await fetch(LOGIN_URL, {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
       headers: {
-        "Content-Type'": "application/json"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         name: username,
         password: password
       })
-    }).then((data) => {
+    });
+    return response.json();
+  }
+
+  function login() {
+    postData().then((data) => {
       if (data.code === 1) {
         navigate("/food");
       } else {
