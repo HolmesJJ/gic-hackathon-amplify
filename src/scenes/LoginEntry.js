@@ -19,6 +19,7 @@ function LoginEntry() {
   function login() {
     fetch(LOGIN_URL, {
       method: "POST",
+      mode: "cors",
       cache: "no-cache",
       headers: {
         "Content-Type'": "application/json"
